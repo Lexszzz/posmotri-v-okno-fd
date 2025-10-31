@@ -4,8 +4,34 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 html {
+  margin: 0;
+  padding: 0;
   block-size: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 .visually-hidden {
@@ -23,8 +49,8 @@ html {
   justify-content: center;
   align-items: center;
   inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
+  height: 100vh;
+  margin: 0 auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -33,9 +59,8 @@ html {
 
 .result {
   width: 711px;
-  height: 456px;
-  margin: 0px;
-  transform: translate(0px, 5px);
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -46,7 +71,6 @@ html {
   color: #ffffff;
   letter-spacing: 0;
   text-transform: uppercase;
-  transform: translate(0px, -18px);
 }
 
 .content__accent {
@@ -57,6 +81,7 @@ html {
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
 }
 
 .content__card-link:active {
@@ -68,7 +93,7 @@ html {
 }
 
 .content__card-link_current {
-  background-color: inherit;
+  background-color: #545050;
 }
 
 .content__video-card-title {
@@ -84,12 +109,13 @@ html {
 }
 
 .content {
-  width: 1140px;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: end;
   justify-content: space-between;
+  width: 1140px;
   gap: 30px;
+  padding-bottom: 215px;
 }
 
 .search-form {
@@ -97,6 +123,7 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 40px;
 }
 
 .content__video-card {
@@ -108,21 +135,18 @@ html {
   cursor: pointer;
 }
 
-.content__list-item:last-child {
-  margin-bottom: 32px;
-}
-
 .content__list {
-  min-inline-size: 0;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
+  padding-top: 2px;
 }
 
 .content__list-item {
+  display: flex;
+  flex-direction: column;
   padding-left: 3px;
   padding-right: 3px;
-  overflow: auto;
 }
 
 .content__list-container {
@@ -133,13 +157,26 @@ html {
   height: 298px;
 }
 
+.content__list-container {
+  gap: 32px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
 .content__details {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
-  transform: translate(0px, 1px);
+  gap: 20px;
 }
 
 .content__video-card-thumbnail {
@@ -151,24 +188,26 @@ html {
 }
 
 .content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
 .content__video-card-description {
-  line-height: 11px;
+  line-height: 16.2px;
 }
 
 .result__video-container {
   position: relative;
-  height: 386px;
   width: 711px;
-  margin-bottom: 17px;
+  height: 386px;
+  margin-bottom: 16px;
 }
 
 .result__video {
   height: 100%;
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .search-form__fieldset-title {
@@ -219,9 +258,7 @@ html {
   flex-direction: row;
   align-items: center;
   width: fit-content;
-}
-.search-form__label-text {
-  padding-left: 5px;
+  gap: 4px;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -269,16 +306,15 @@ html {
   color: #fff;
   background-color: transparent;
   cursor: pointer;
+  min-height: 34px;
 }
 
 .search-form__submit-button {
-  height: 34px;
   width: 194px;
   align-self: end;
 }
 
 .more-button {
-  min-height: 34px;
   width: 100%;
   margin-bottom: 3px;
 }
@@ -289,6 +325,7 @@ html {
 
 .button:active {
   background-color: #545050;
+  text-decoration: none;
 }
 
 .button:focus {
@@ -297,25 +334,6 @@ html {
 
 .button:focus-visible {
   outline: 1px solid #fff;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
 }
 
 /* Кастомный скроллбар */
